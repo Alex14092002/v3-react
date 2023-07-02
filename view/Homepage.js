@@ -1,10 +1,16 @@
 import { Component } from '../core/Component.js';
+import {Header} from '../components/Header.js'
+import { Login } from '../components/Login.js';
+console.log(Login);
 
 class HomePage extends Component {
-  render() {
-    return `
-      <h1>Trang chủ</h1>
-      <p>Đây là trang chủ của website</p>
+  
+  display() {
+
+    const rootElement = document.getElementById('root');
+    rootElement.innerHTML = `
+      ${new Header().display()}
+      ${new Login().display()}
     `;
   }
 }
